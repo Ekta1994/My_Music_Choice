@@ -1,0 +1,16 @@
+# Implementation details:
+
+For getting started,
+
+1.) Create a project and enable the YouTube Data API for it ( Refer this : https://developers.google.com/youtube/v3/getting-started ) .
+2.) Create a youtube playlist and get the playlist ID. 
+3.) The function fetch_my_playlist() returns the video-id of all the songs in the playlist.
+4.) The Youtube API's channel and video resources contain a topicDetails object. For any given resource ( ie. video-id) , the object contains a list of FREEBASE topic IDSs each of which identifies a topic associated with the resource.  For more info regarding FreeBase, refer https://developers.google.com/freebase/v1/topic-overview?hl=en and https://developers.google.com/freebase/mql/ch02. 
+5.) To retrieve the topics for the resources returned in a video.list request , ( enter the required parameters in the API explorer), refer function get_song_topics() in the code.
+6.) We'll now get the genres of each song. If a topic is directly associated with the FreeBase database, we can easily get its genre using notable_for and notable-type (http://wiki.freebase.com/wiki/Notable_types  ) . See function: do_freebase_call() in the code.
+7.) For those not in FreeBase, follow the Wiki links to find out the artists in order to get the genres. The Wiki links are extracted using the citation property of the JSON object returned. Refer do_freebase_call() function in the code. 
+On the Wiki page we find out the Genres from the InfoBox. Refer Info.png for seeing an example.
+8.) The Genres and their counts are maintained in the dictionary. 
+9.) Generate word Clouds of the same and test your results.
+
+Note: FreeBase is now closed . Other resources like musicbrainz are there and can be implemented in a similar manner.
