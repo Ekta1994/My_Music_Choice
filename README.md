@@ -1,5 +1,5 @@
 # My_Music_Choice
-The script aims to analyze my youtube playlist and find the genre of the songs/videos in it. By finding the count of each genre it then creates the word cloud of my choice of the music ( in accordance with the playlist). The Machine Learning algorithms can be applied for finding out patterns and generate a more appropriate word cloud.
+The project aims to analyse the choice of our music by extracting the genre of each song/video and generate an optimal wordcloud. The Machine Learning algorithm applied, takes as features the genre choice of the user's playlist and various parameters of the song like its popularity, number of viewers etc. For the training data, youtube playlist are taken and video-id(and thus topic-id)  etc extraction is done using Youtube Data API(v3). The genre of every song are extracted from FreeBase which is a Creative Commons Licensed repository containing information about millions of topic-id available on youtube. Since it's closed now, they are fetched via Infobox with the use of TOPIC API.
 
 **Requirements -:**
  - Python 3/2.7
