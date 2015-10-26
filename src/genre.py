@@ -115,14 +115,14 @@ def do_freebase_call(topic) :
     elif "music" in notable_types or "music" in notable_for:
         category = "music single"
             
-    if category == MUSIC_GENRE_CATEGORY:
+    if category == "music genre":
             raw_genres = topic['property']['/type/object/name']['values']
          
             #Refer JSON_response4.png for this
             for g in raw_genres :
                 gen.append(str(g['text']))
             
-    elif category == MUSIC_SINGLE_CATEGORY or category == ARTIST_CATEGORY :
+    elif category == "music single" or category == "artist" :
             #Retrievng genres via Wikipedia's link ( InfoBox )
     
             if '/common/topic/description' in topic['property']:
